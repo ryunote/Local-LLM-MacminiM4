@@ -1,0 +1,28 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: always
+    ports:
+      - "3000:8080"
+    volumes:
+      - /Users/ryunote/Code/llama/history:/app/backend/data
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - ENABLE_RAG_WEB_SEARCH=True
+      - ENABLE_SEARCH_QUERY=True
+      - RAG_WEB_SEARCH_ENGINE=searxng
+      - SEARXNG_QUERY_URL=http://host.docker.internal:9090/search?q=<query>
+      - ENABLE_WEB_SEARCH=True
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: always
+    ports:
+      - "9090:8080"
+    volumes:
+      # 作成した設定ファイルをマウント
+      - /Users/ryunote/Code/llama/searxng_settings.yml:/etc/searxng/settings.yml:ro
