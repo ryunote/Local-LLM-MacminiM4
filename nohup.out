@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/ryunote/Code/llama/ComfyUI/main.py", line 12, in <module>
+    from app.assets.seeder import asset_seeder
+  File "/Users/ryunote/Code/llama/ComfyUI/app/assets/seeder.py", line 11, in <module>
+    from app.assets.scanner import (
+  File "/Users/ryunote/Code/llama/ComfyUI/app/assets/scanner.py", line 7, in <module>
+    from app.assets.database.queries import (
+  File "/Users/ryunote/Code/llama/ComfyUI/app/assets/database/queries/__init__.py", line 1, in <module>
+    from app.assets.database.queries.asset import (
+  File "/Users/ryunote/Code/llama/ComfyUI/app/assets/database/queries/asset.py", line 1, in <module>
+    import sqlalchemy as sa
+ModuleNotFoundError: No module named 'sqlalchemy'
