@@ -27,3 +27,6 @@ __pycache__/
 .venv/
 venv/
 env/
+
+# SearxNGの設定ファイル(毎回変更されるため、Git管理対象外とする)
+searxng_settings.yml
