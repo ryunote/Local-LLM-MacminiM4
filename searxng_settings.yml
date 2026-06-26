@@ -1,6 +1,6 @@
 use_default_settings: true
 server:
-  secret_key: "95c97559a663f07713a553fc42832e3b"
+  secret_key: "75de1bf867d36e459b1165ac1a6abbf5"
   limiter: false
   image_proxy: true
 search:
